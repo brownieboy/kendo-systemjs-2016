@@ -16,25 +16,23 @@
     </div>
     <script src=" ../node_modules/jquery/dist/jquery.min.js "></script>
     <script src="../node_modules/systemjs/dist/system.js"></script>
-
     <!--http://127.0.0.1:8887/bower_components/kendo-ui/src/js/kendo-ui/src/js/kendo.router.js-->
     <script>
     System.config({
         defaultJSExtensions: true,
         paths: {
-            'kendo.*.js': "../bower_components/kendo-ui/src/js/kendo.*.js"
-            },
+            "kendo.*": "../bower_components/kendo-ui/src/js/kendo.*"
+        },
         transpiler: "plugin-babel",
         map: {
             "plugin-babel": "../node_modules/systemjs-plugin-babel/plugin-babel.js",
             'systemjs-babel-build': '../node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',
-            jquery: '../../../node_modules/jquery/dist/jquery.min.js'
+            jquery: '../node_modules/jquery/dist/jquery.min.js'
         }
     });
     System.import('./js/app.js');
     </script>
-
-<!--        paths: {
+    <!--        paths: {
         'kendo.*': "../kendo/dist/js/kendo.*.js"
       } -->
 </body>
