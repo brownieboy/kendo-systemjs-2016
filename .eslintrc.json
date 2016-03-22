@@ -6,6 +6,7 @@
             "modules": true
         }
     },
+    "extends": "eslint",
     "rules": {
         "semi": 2
     }
