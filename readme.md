@@ -1,5 +1,6 @@
 # kendo-systemjs-2016
 A Kendo test for working with SystemJS; i.e. it doesn't!!
+Update: 22/03/2016.  Telerik found the problem, which was with the wild cards that I was using to load Kendo.  I'm leaving this here for historical purposes.
 
 ###The problem
 SystemJS is not finding the dependent Kendo libraries.  It does load libraries that are loaded directly by my code.  For example,  in /src/js/app.js I am loading kendo.router.js, and SystemJS find that just find.  However, kendo.router.js then tries to load kendo.core.js, and for some reason SystemJs is unable to find that.
