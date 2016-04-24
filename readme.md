@@ -1,6 +1,9 @@
 # kendo-systemjs-2016
-A Kendo test for working with SystemJS; i.e. it doesn't!!
+A Kendo test for working with SystemJS; i.e. it (still) doesn't!!
+
 Update: 22/03/2016.  Telerik found the problem, which was with the wild cards that I was using to load Kendo.  I'm leaving this here for historical purposes.
+
+Update: 24/04/2016.  Attempting to bundle the files will still result in unresolved dependencies.  This was reported to telerik in a ticket and they confirmed they saw the same behavior. They suggested I contact systemjs/jspm.
 
 ###The problem
 SystemJS is not finding the dependent Kendo libraries.  It does load libraries that are loaded directly by my code.  For example,  in /src/js/app.js I am loading kendo.router.js, and SystemJS find that just find.  However, kendo.router.js then tries to load kendo.core.js, and for some reason SystemJs is unable to find that.
@@ -17,7 +20,9 @@ The code in this repository uses Node/npm to install its dependencies.  Setup in
 1. In a bash window, git clone this repository.
 1. cd to the repository folder, then issue `npm install` to download the dependencies.
 1. One of those dependencies will be Bower.  You can now use Bower to install Kendo Pro from the official Telerik Bower packages by issuing ` node_modules/.bin/bower install` at your command prompt.  You will be prompted to your Telerik ID and password at this stage, and may have to enter them twice.
-1. Open the file src/index.html in your browser in a local web server.  I use Sublime Server for this.
+1. Another one of thoese dependencies will be Gulp.  You can now use Gulp to bundle the project together by issuing `node_modules/.bin/gulp` at your command prompt.
+1. Open the file src/index.html in your browser in a local web server.  I use Sublime Server for this.   Note that this works.
+1. Open the file dist/index.html in your browser in a local web server and note that this fails with the error 'kendo.columnsorter';
 
 ###Further Notes
 SystemJS uses Babel to transpile ES6 modules into ES5.
